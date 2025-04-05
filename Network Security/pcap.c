@@ -22,7 +22,7 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
 
             int tcp_header_len = TH_OFF(tcp) * 4;
 
-            // 데이터 시작 위치
+            // 메세지 시작 위치
             const u_char *data = (u_char *)tcp + tcp_header_len;
             int data_len = ntohs(ip->iph_len) - ip_header_len - tcp_header_len;
 
